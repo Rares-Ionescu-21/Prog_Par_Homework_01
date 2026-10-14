@@ -6,8 +6,6 @@ public class ConsoleView {
     public ConsoleView() {}
 
     public void displayAll(Tree[] trees) {
-        // Tree[] trees = controller.getAllTrees();
-
         if (trees.length == 0) {
             System.out.println("The repo is empty.");
         }
@@ -21,8 +19,6 @@ public class ConsoleView {
 
     public void displayOlderThree(Tree[] olderTrees) {
         System.out.println("Trees older than 3 years:");
-
-        // Tree[] olderTrees = controller.getTreesOlderThree();
 
         if (olderTrees.length == 0) {
             System.out.println("There are no trees older than 3 years.");
