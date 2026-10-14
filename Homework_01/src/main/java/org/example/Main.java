@@ -11,8 +11,8 @@ import org.example.view.ConsoleView;
 public class Main {
     public static void main(String[] args) {
         TreeRepository repository = new MemoryRepository(5);
-        TreeController controller = new TreeController(repository);
-        ConsoleView view = new ConsoleView(controller);
+        ConsoleView view = new ConsoleView();
+        TreeController controller = new TreeController(repository, view);
 
         System.out.println("Placing trees into the repo.");
 
@@ -26,18 +26,18 @@ public class Main {
         System.out.println();
 
         // System.out.println("DB_01:");
-        // view.displayAllTrees();
+        // controller.displayAllTrees();
 
-        view.displayTreesOlderThree();
+        controller.displayTreesOlderThree();
 
         /*
         System.out.println("Test_01:  Removing 'pearTree01' from the repo.");
         controller.removeTree("pearTree01");
         System.out.println("Done.");
         System.out.println();
-         */
+        */
 
         // System.out.println("DB_02:");
-        // view.displayAllTrees();
+        // controller.displayAllTrees();
     }
 }

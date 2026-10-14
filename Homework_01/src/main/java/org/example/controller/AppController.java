@@ -2,12 +2,15 @@ package org.example.controller;
 
 import org.example.model.Tree;
 import org.example.repository.TreeRepository;
+import org.example.view.ConsoleView;
 
 public class AppController {
     private final TreeRepository repository;
+    private final ConsoleView view;
 
-    public AppController(TreeRepository repository) {
+    public AppController(TreeRepository repository, ConsoleView view) {
         this.repository = repository;
+        this.view = view;
     }
 
     public void addTree(Tree tree) {
@@ -40,5 +43,13 @@ public class AppController {
             }
         }
         return result;
+    }
+
+    public void displayAllTrees() {
+        view.displayAll(getAllTrees());
+    }
+
+    public void displayTreesOlderThree() {
+        view.displayOlderThree(getTreesOlderThree());
     }
 }

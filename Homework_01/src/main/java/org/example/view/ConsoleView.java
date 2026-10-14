@@ -1,17 +1,12 @@
 package org.example.view;
 
-import org.example.controller.TreeController;
 import org.example.model.Tree;
 
 public class ConsoleView {
-    private final TreeController controller;
+    public ConsoleView() {}
 
-    public ConsoleView(TreeController controller) {
-        this.controller = controller;
-    }
-
-    public void displayAllTrees() {
-        Tree[] trees = controller.getAllTrees();
+    public void displayAll(Tree[] trees) {
+        // Tree[] trees = controller.getAllTrees();
 
         if (trees.length == 0) {
             System.out.println("The repo is empty.");
@@ -24,10 +19,10 @@ public class ConsoleView {
         System.out.println();
     }
 
-    public void displayTreesOlderThree() {
+    public void displayOlderThree(Tree[] olderTrees) {
         System.out.println("Trees older than 3 years:");
 
-        Tree[] olderTrees = controller.getTreesOlderThree();
+        // Tree[] olderTrees = controller.getTreesOlderThree();
 
         if (olderTrees.length == 0) {
             System.out.println("There are no trees older than 3 years.");
