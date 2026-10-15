@@ -25,19 +25,27 @@ public class Main {
         System.out.println("Done.");
         System.out.println();
 
-        // System.out.println("DB_01:");
-        // controller.displayAllTrees();
+        System.out.println("DB_01: Tree list before any modification;");
+        controller.displayAllTrees();
 
         controller.displayTreesOlderThree();
 
-        /*
-        System.out.println("Test_01:  Removing 'pearTree01' from the repo.");
+        // Test_01: Remove method:
+        System.out.println("Test_01:  Removing \"pearTree01\" from the repo.");
         controller.removeTree("pearTree01");
         System.out.println("Done.");
         System.out.println();
-        */
 
-        // System.out.println("DB_02:");
-        // controller.displayAllTrees();
+        System.out.println("DB_02: Tree list after first test;");
+        controller.displayAllTrees();
+
+        // Test_02: Add method:
+        System.out.println("Test_02: Adding \"pearTree01\" to the repo.");
+        controller.addTree(new Pear("pearTree01", 2));
+        System.out.println("Done.");
+        System.out.println();
+
+        System.out.println("DB_03: Tree list after the second test;");
+        controller.displayAllTrees();
     }
 }
